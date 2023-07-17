@@ -1362,10 +1362,7 @@ void ProtocolGame::parseOpenNpcTrade(const InputMessagePtr& msg)
 
     int listCount;
 
-    if (g_game.getProtocolVersion() >= 986) // tbh not sure from what version
         listCount = msg->getU16();
-    else
-        listCount = msg->getU8();
 
     for (int i = 0; i < listCount; ++i) {
         uint16 itemId = msg->getU16();
